@@ -6,7 +6,7 @@
 public class Task {
 
 	private Status status;
-	private String taskName;
+	private String taskName, description;
 	private int[] taskNum;
 	private String[] dependency;
 	private double duration;
@@ -35,13 +35,27 @@ public class Task {
 		this.taskNum = taskNum;
 		this.dependency = dependency;
 		this.duration = duration;
+		this.description = "";
+	}
+	
+	/**
+	 * Parameterized constructor; five arg.
+	 * @param taskName
+	 * @param taskNum
+	 * @param dependency
+	 * @param duration
+	 * @param description
+	 */
+	Task(String taskName, int[] taskNum, String[] dependency, double duration, String description) {
+		this(taskName, taskNum, dependency, duration);
+		this.description = description;
 	}
 	
 	/**
 	 * @param task to be copied.
 	 */
 	Task(Task task) {
-		
+		// TODO
 	}
 	
 	/**
@@ -92,6 +106,38 @@ public class Task {
 			if (i != dependency.length - 1) temp += ", ";
 		}
 		return temp;
+	}
+	
+	/**
+	 * Description getter.
+	 * @return task description.
+	 */
+	String getDescription() {
+		return this.description;
+	}
+	
+	/**
+	 * Overridden toString.
+	 */
+	String[] outString() {
+		//TODO
+		
+		return null;
+	}
+	
+	/**
+	 * Saves task to file
+	 */
+	void save() {
+		// TODO
+	}
+	
+	/**
+	 * Reads task from file
+	 * @param filepath
+	 */
+	void read(String filepath) {
+		// TODO
 	}
 	
 }

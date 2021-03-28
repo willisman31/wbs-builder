@@ -37,4 +37,30 @@ public class WBS {
 		return this.tasks;
 	}
 	
+	/** 
+	 * 
+	 */
+	void read() {
+		// TODO
+	}
+	
+	/**
+	 * 
+	 */
+	void save() {
+		// TODO
+		try {
+			
+		} catch (Exception e) {
+			
+		}
+	}
+	
+	/**
+	 * 
+	 */
+	void print() {
+		
+	}
+	
 }
