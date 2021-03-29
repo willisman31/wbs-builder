@@ -1,3 +1,5 @@
+import java.util.Scanner;
+import java.io.File;
 /**
  * 
  * @author Willis
@@ -49,6 +51,14 @@ public class Task {
 	Task(String taskName, int[] taskNum, String[] dependency, double duration, String description) {
 		this(taskName, taskNum, dependency, duration);
 		this.description = description;
+	}
+	
+	/**
+	 * Task constructor for reading in String from File opened by WBS class.
+	 * @param fullInfo
+	 */
+	Task(String fullInfo) {
+		
 	}
 	
 	/**
@@ -126,18 +136,13 @@ public class Task {
 	}
 	
 	/**
-	 * Saves task to file
-	 */
-	void save() {
-		// TODO
-	}
-	
-	/**
-	 * Reads task from file
+	 * Reads input as a string and formats it as a Task.
 	 * @param filepath
 	 */
-	void read(String filepath) {
+	static Task read(String input) {
 		// TODO
+		Task task = new Task();
+		return task;
 	}
 	
 }
