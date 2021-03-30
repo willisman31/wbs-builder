@@ -66,6 +66,9 @@ public class Task {
 	 */
 	Task(Task task) {
 		// TODO
+		this.taskName = task.getTaskName();
+		// this.taskNum = task.getTaskNum();
+		
 	}
 	
 	/**
@@ -129,20 +132,12 @@ public class Task {
 	/**
 	 * Overridden toString.
 	 */
-	String[] outString() {
+	String outString() {
 		//TODO
-		
+		String temp = this.taskName;
+		temp += " " ;
 		return null;
 	}
 	
-	/**
-	 * Reads input as a string and formats it as a Task.
-	 * @param filepath
-	 */
-	static Task read(String input) {
-		// TODO
-		Task task = new Task();
-		return task;
-	}
 	
 }
