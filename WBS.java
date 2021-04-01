@@ -1,3 +1,6 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 /**
  * WBS builder logic class.
@@ -38,18 +41,27 @@ public class WBS {
 	}
 	
 	/** 
-	 * 
+	 * Read saved WBS from file.
 	 */
 	void read() {
 		// TODO
+		try {
+			File file = new File("");
+			Scanner scan = new Scanner(file);
+			
+			scan.close();
+		} catch (FileNotFoundException f){
+			
+		}
 	}
 	
 	/**
-	 * 
+	 * Save WBS to file.
 	 */
 	void save() {
 		// TODO
 		try {
+			File file = new File("");
 			
 		} catch (Exception e) {
 			
