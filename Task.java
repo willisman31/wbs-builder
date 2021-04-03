@@ -54,15 +54,6 @@ public class Task {
 	}
 	
 	/**
-	 * Task constructor for reading in String from File opened by WBS class.
-	 * @param fullInfo
-	 */
-	Task(String fullInfo) {
-		// TODO
-		
-	}
-	
-	/**
 	 * @param task to be copied.
 	 */
 	Task(Task task) {
