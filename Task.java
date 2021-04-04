@@ -1,9 +1,7 @@
-import java.util.Scanner;
-import java.io.File;
 /**
  * 
  * @author Willis
- * Updated 3/23/2021
+ * Updated 4/4/2021
  */
 public class Task {
 
@@ -54,13 +52,16 @@ public class Task {
 	}
 	
 	/**
+	 * Copy constructor.
 	 * @param task to be copied.
 	 */
 	Task(Task task) {
-		// TODO
 		this.taskName = task.getTaskName();
-		// this.taskNum = task.getTaskNum();
-		
+		this.taskNum = task.copyTaskNum();
+		this.status = task.getStatus();
+		this.dependency = task.copyDependency();
+		this.description = task.getDescription();
+		this.duration = task.getDuration();
 	}
 	
 	/**
@@ -96,8 +97,16 @@ public class Task {
 	 * Status getter.
 	 * @return status String.
 	 */
-	String getStatus() {
-		return this.status.toString();
+	Status getStatus() {
+		return this.status;
+	}
+	
+	/**
+	 * Task number copier.
+	 * @return task number.
+	 */
+	int[] copyTaskNum() {
+		return this.taskNum;
 	}
 	
 	/**
@@ -111,6 +120,14 @@ public class Task {
 			if (i != dependency.length - 1) temp += ", ";
 		}
 		return temp;
+	}
+	
+	/**
+	 * Dependency getter for copy constructor.
+	 * @return dependency of this.
+	 */
+	String[] copyDependency() {
+		return this.dependency;
 	}
 	
 	/**
@@ -128,7 +145,7 @@ public class Task {
 		//TODO
 		String temp = this.taskName;
 		temp += " " ;
-		return null;
+		return temp;
 	}
 	
 	

@@ -29,7 +29,7 @@ public class WBS {
 	 * @param wbs to be copied.
 	 */
 	WBS(WBS wbs) {
-		
+		// TODO
 	}
 	
 	/**
@@ -69,10 +69,10 @@ public class WBS {
 	}
 	
 	/**
-	 * 
+	 * Print WBS using Java's print package.
 	 */
 	void print() {
-		
+		// TODO
 	}
 	
 }
