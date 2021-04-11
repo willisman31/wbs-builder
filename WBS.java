@@ -21,7 +21,7 @@ public class WBS {
 	 * @param tasks part of wbs.
 	 */
 	WBS(Task[] tasks) {
-		
+		// TODO
 	}
 	
 	/**
@@ -38,6 +38,14 @@ public class WBS {
 	 */
 	Task[] getTasks() {
 		return this.tasks;
+	}
+	
+	/**
+	 * Add Task to WBS.
+	 * @param task to add.
+	 */
+	void add(Task task) {
+		// TODO
 	}
 	
 	/** 

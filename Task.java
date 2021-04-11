@@ -7,7 +7,7 @@ public class Task {
 
 	private Status status;
 	private String taskName, description;
-	private int[] taskNum;
+	private int taskNum;
 	private String[] dependency;
 	private double duration;
 	
@@ -17,7 +17,7 @@ public class Task {
 	Task() {
 		this.status = Status.OPEN;
 		this.taskName = null;
-		this.taskNum = null;
+		this.taskNum = -1;
 		this.dependency = null;
 		this.duration = -1;
 	}
@@ -29,7 +29,7 @@ public class Task {
 	 * @param dependency
 	 * @param duration
 	 */
-	Task(String taskName, int[] taskNum, String[] dependency, double duration) {
+	Task(String taskName, int taskNum, String[] dependency, double duration) {
 		this.status = Status.OPEN;
 		this.taskName = taskName;
 		this.taskNum = taskNum;
@@ -46,7 +46,7 @@ public class Task {
 	 * @param duration
 	 * @param description
 	 */
-	Task(String taskName, int[] taskNum, String[] dependency, double duration, String description) {
+	Task(String taskName, int taskNum, String[] dependency, double duration, String description) {
 		this(taskName, taskNum, dependency, duration);
 		this.description = description;
 	}
@@ -73,6 +73,14 @@ public class Task {
 	}
 	
 	/**
+	 * Name setter.
+	 * @param name new task name.
+	 */
+	void setName(String name) {
+		this.taskName = name;
+	}
+	
+	/**
 	 * Duration getter.
 	 * @return duration in days.
 	 */
@@ -82,15 +90,18 @@ public class Task {
 	
 	/**
 	 * TaskNum getter
-	 * @return taskNum as String.
+	 * @return taskNum as int.
 	 */
-	String getTaskNum() {
-		String temp = "";
-		for (int i = 0; i < taskNum.length; i++) {
-			temp += taskNum[i];
-			if (i != taskNum.length - 1) temp += ".";
-		}
-		return temp;
+	int getTaskNum() {
+		return this.taskNum;
+	}
+	
+	/**
+	 * Set task number.
+	 * @param num next task number.
+	 */
+	void setNum(int num) {
+		this.taskNum = num;
 	}
 	
 	/**
@@ -101,11 +112,16 @@ public class Task {
 		return this.status;
 	}
 	
+	
+	void setStatus(Status status) {
+		this.status = status;
+	}
+	
 	/**
 	 * Task number copier.
 	 * @return task number.
 	 */
-	int[] copyTaskNum() {
+	int copyTaskNum() {
 		return this.taskNum;
 	}
 	
@@ -136,6 +152,14 @@ public class Task {
 	 */
 	String getDescription() {
 		return this.description;
+	}
+	
+	/**
+	 * Description setter.
+	 * @param d new description.
+	 */
+	void setDescription(String d) {
+		this.description = d;
 	}
 	
 	/**
