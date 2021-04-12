@@ -1,8 +1,8 @@
 import java.util.Scanner;
 /**
- * 
+ * Run logic; holds main method
  * @author Willis
- * @version 4.10.2021
+ * @version 4.12.2021
  */
 public class Run {
 
@@ -11,9 +11,8 @@ public class Run {
 	 * @param args accepts command line arguments.
 	 */
 	public static void main(String[] args) {
-		// TODO
 		runLocal();
-		// runGUI();
+		runGUI();
 	}
 
 	/**
