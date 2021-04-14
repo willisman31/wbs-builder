@@ -14,14 +14,15 @@ public class WBS {
 	private String name;
 	private int totDuration;
 	private static final int MAXTASKS = 50;
-	private Task[] tasks = new Task[MAXTASKS];
-	private int numTasks;
+	private static Task[] tasks = new Task[MAXTASKS];
+	private static int numTasks;
 	
 	/**
 	 * Default constructor.
 	 */
 	WBS() {
 		// TODO
+		
 	}
 
 	/**
@@ -29,9 +30,9 @@ public class WBS {
 	 * 
 	 * @param tasks part of wbs.
 	 */
-	WBS(Task[] tasks) {
+	WBS(Task[] task) {
 		// TODO
-		this.tasks = tasks;
+		tasks = task;
 		this.name = "Unnamed Work Breakdown Structure";
 		for (int i = 0; i < MAXTASKS; i++) {
 			
@@ -54,7 +55,7 @@ public class WBS {
 	 * @return tasks attribute.
 	 */
 	Task[] getTasks() {
-		return this.tasks;
+		return tasks;
 	}
 
 	/**
@@ -94,13 +95,17 @@ public class WBS {
 	 * @return number of used spaces in the tasks array.
 	 */
 	int getNumTasks() {
-		return this.numTasks;
+		return numTasks;
 	}
 	
+	/**
+	 * Duration getter.
+	 * 
+	 * @return sum of duration of each task in list.
+	 */
 	int getDuration() {
 		return totDuration;
 	}
-	
 	
 	/**
 	 * Add task to task list.
@@ -109,17 +114,41 @@ public class WBS {
 	 * @return whether task was successfully added.
 	 */
 	boolean addTask(Task task) {
-		// TODO
-		boolean addable = false;
-		
-		
-		return addable;
+		boolean addable = addable();
+		boolean goodTask = task.goodTask();
+		boolean unique = findTask(task) != -1;
+		tasks[numTasks] = task;
+		numTasks++;
+		return addable && goodTask && unique;
 	}
 
+	/**
+	 * Can another task be added to the wbs list?
+	 * 
+	 * @return whether task can be added to wbs.
+	 */
+	static boolean addable() {
+		return numTasks < MAXTASKS;
+	}
 	
+	/**
+	 * Find index of specified task in tasks array.
+	 * 
+	 * @param task to find.
+	 * @return index of task in tasks array.
+	 */
+	static int findTask(Task task) {
+		int num = -1;
+		for (int i = 0; i < numTasks; i++) {
+			if (task.equals(tasks[i])) {
+				num = i; 
+				break;
+			}
+		}
+		return num;
+	}
 	
 	/*** File reading and writing operations ***/
-	
 	
 	/**
 	 * Read saved WBS from file.

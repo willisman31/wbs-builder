@@ -43,11 +43,11 @@ public class Task {
 	/**
 	 * Parameterized constructor; five arg.
 	 * 
-	 * @param taskName
-	 * @param taskNum
-	 * @param dependency
-	 * @param duration
-	 * @param description
+	 * @param taskName Name of task.
+	 * @param taskNum task number.
+	 * @param dependency list of dependencies.
+	 * @param duration task duration.
+	 * @param description task description.
 	 */
 	Task(String taskName, int taskNum, String[] dependency, double duration, String description) {
 		this(taskName, taskNum, dependency, duration);
@@ -190,6 +190,18 @@ public class Task {
 		temp += this.getStatus().toString() + " ";
 		temp += this.getDescription();
 		return temp;
+	}
+	
+	/**
+	 * Checks if task conforms to requirements of real task.
+	 * 
+	 * @return whether task conforms.
+	 */
+	boolean goodTask() {
+		boolean good = !taskName.equals(null);
+		good = good && taskNum > -1;
+		good = good && duration > 0;
+		return good;
 	}
 
 }
